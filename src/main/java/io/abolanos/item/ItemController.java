@@ -17,17 +17,17 @@ public class ItemController {
 	@Autowired																	// Connects itemService with the main controller.
 	private ItemService itemService;
 	
-	@RequestMapping("todolist/all")												// URL request mapping to control.
+	@RequestMapping({"todolist", "todolist/all"})												// URL request mapping to control.
 	public List<Item> getAllItems() {											// Method that calls the corresponding service in itemService.
 		return itemService.getAllItems();
 	}
 	
-	@RequestMapping("todolist/all/sorted")										// URL request mapping to control.
+	@RequestMapping("todolist/sorted")										// URL request mapping to control.
 	public List<Item> getAllItemsSorted() {										// Method that calls the corresponding service in itemService.
 		return itemService.getAllItemsSorted();
 	}
 	
-	@RequestMapping("todolist/all/shuffled")									// URL request mapping to control.
+	@RequestMapping("todolist/shuffled")									// URL request mapping to control.
 	public List<Item> getAllItemsShuffled() {									// Method that calls the corresponding service in itemService.
 		return itemService.getAllItemsShuffled();								
 	}

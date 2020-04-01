@@ -10,9 +10,9 @@ import javax.persistence.Id;
 @Entity
 public class Item {
 
-	@Id
+	@Id	
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column(name = "id", columnDefinition = "serial", updatable = false, nullable = false)
+	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;									// Stores an auto-generated long value as an id in the database.
 	private String description;							// Stores the description of the todo item.
 	private Boolean completed;							// Flag for the status of the todo item.
@@ -36,9 +36,9 @@ public class Item {
 	
 	// Getters
 	
-	public Long getId() {
-		return id;
-	}
+//	public Long getId() {
+//		return id;
+//	}
 	
 	public String getDescription() {
 		return description;
@@ -50,9 +50,9 @@ public class Item {
 
 	// Setters
 	
-	public void setId(Long id) {
-		this.id = id;
-	}
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
 	
 	public void setDescription(String description) {
 		this.description = description;
