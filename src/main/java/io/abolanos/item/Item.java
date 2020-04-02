@@ -36,9 +36,9 @@ public class Item {
 	
 	// Getters
 	
-//	public Long getId() {
-//		return id;
-//	}
+	public Long getId() {
+		return id;
+	}
 	
 	public String getDescription() {
 		return description;
@@ -50,9 +50,9 @@ public class Item {
 
 	// Setters
 	
-//	public void setId(Long id) {
-//		this.id = id;
-//	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	
 	public void setDescription(String description) {
 		this.description = description;

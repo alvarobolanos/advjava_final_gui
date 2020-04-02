@@ -26,12 +26,12 @@ function populateTodoList(target) {												// A function to populate the div
 function createEventListeners() {
 	
 	// IMPORTANT: ToDo despite displaying on http://localhost:8080/todolist/todo, not able to display it on http://localhost:8080/
-	//var todoButton = document.getElementById('todo');
-	//todoButton.addEventListener("click", function() {populateTodoList("/todo");}, false);
+	var todoButton = document.getElementById('todo');
+	todoButton.addEventListener("click", function() {populateTodoList("/todo");}, false);
 	
 	// IMPORTANT: Complete despite displaying on http://localhost:8080/todolist/complete, not able to display it on http://localhost:8080/
-	//var completeButton = document.getElementById('complete');
-	//completeButton.addEventListener("click", function() {populateTodoList("/complete");}, false);
+	var completeButton = document.getElementById('complete');
+	completeButton.addEventListener("click", function() {populateTodoList("/complete");}, false);
 	
 	// Sort
 	var sortButton = document.getElementById('sort');
