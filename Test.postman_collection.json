@@ -1,0 +1,359 @@
+{
+	"id": "b0c41d28-a7a0-4b69-8c6f-b49a2c566c6a",
+	"name": "Test",
+	"timestamp": "2020-04-02T01:23:32.479Z",
+	"collection_id": "8baf75d4-36bd-4020-8503-aa860b907eaa",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 11,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "c12b81f0-e631-4fe9-8378-eb06412ae0f7",
+			"name": "Adds a record with false.",
+			"url": "localhost:8080/todolist/",
+			"time": 256,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code name has string": true
+			},
+			"testPassFailCounts": {
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				256
+			],
+			"allTests": [
+				{
+					"Status code name has string": true
+				}
+			]
+		},
+		{
+			"id": "6eac8b2f-242d-47b3-b3f8-4068a581d59f",
+			"name": "Adds another record with false.",
+			"url": "localhost:8080/todolist/",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code name has string": true
+			},
+			"testPassFailCounts": {
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status code name has string": true
+				}
+			]
+		},
+		{
+			"id": "9327c63a-dd4d-4c36-9f3c-71505b07d787",
+			"name": "Adds a record with true.",
+			"url": "localhost:8080/todolist/",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code name has string": true
+			},
+			"testPassFailCounts": {
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code name has string": true
+				}
+			]
+		},
+		{
+			"id": "3c71307c-0c51-4802-9582-19e0e6c5520e",
+			"name": "Gets all records.",
+			"url": "localhost:8080/todolist/",
+			"time": 83,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code name has string": true
+			},
+			"testPassFailCounts": {
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				83
+			],
+			"allTests": [
+				{
+					"Status code name has string": true
+				}
+			]
+		},
+		{
+			"id": "a350ab20-dbf2-47c7-8aa6-7598c260c96b",
+			"name": "Gets all complete records.",
+			"url": "localhost:8080/todolist/complete",
+			"time": 18,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code name has string": true
+			},
+			"testPassFailCounts": {
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				18
+			],
+			"allTests": [
+				{
+					"Status code name has string": true
+				}
+			]
+		},
+		{
+			"id": "8f0de1df-f7e2-4f67-a035-e7f88cc1aa5d",
+			"name": "Gets all todo records.",
+			"url": "localhost:8080/todolist/todo",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code name has string": true
+			},
+			"testPassFailCounts": {
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status code name has string": true
+				}
+			]
+		},
+		{
+			"id": "738787f8-7206-4fbf-9e71-077c4b09d71f",
+			"name": "Gets all records sorted by description.",
+			"url": "localhost:8080/todolist/all/sorted",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code name has string": true
+			},
+			"testPassFailCounts": {
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code name has string": true
+				}
+			]
+		},
+		{
+			"id": "ed5d32ad-0324-4375-a2a1-92dacd44ab7b",
+			"name": "Gets all records shuffled.",
+			"url": "localhost:8080/todolist/all/shuffled",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code name has string": true
+			},
+			"testPassFailCounts": {
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status code name has string": true
+				}
+			]
+		},
+		{
+			"id": "fb9bdb3a-0b25-4d3e-9de3-c7c6026671f0",
+			"name": "Modify an existing record",
+			"url": "localhost:8080/todolist/1",
+			"time": 31,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code name has string": true
+			},
+			"testPassFailCounts": {
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				31
+			],
+			"allTests": [
+				{
+					"Status code name has string": true
+				}
+			]
+		},
+		{
+			"id": "b2f203df-af46-4224-b24b-0b7da3622eec",
+			"name": "Delete a record.",
+			"url": "http://localhost:8080/todolist/1",
+			"time": 15,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code name has string": true
+			},
+			"testPassFailCounts": {
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				15
+			],
+			"allTests": [
+				{
+					"Status code name has string": true
+				}
+			]
+		},
+		{
+			"id": "f8efccd2-60a1-4509-96ba-95e38b05e7a3",
+			"name": "Delete all records.",
+			"url": "http://localhost:8080/todolist/all",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code name has string": true
+			},
+			"testPassFailCounts": {
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status code name has string": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 437,
+	"collection": {
+		"requests": [
+			{
+				"id": "c12b81f0-e631-4fe9-8378-eb06412ae0f7",
+				"method": "POST"
+			},
+			{
+				"id": "6eac8b2f-242d-47b3-b3f8-4068a581d59f",
+				"method": "POST"
+			},
+			{
+				"id": "9327c63a-dd4d-4c36-9f3c-71505b07d787",
+				"method": "POST"
+			},
+			{
+				"id": "3c71307c-0c51-4802-9582-19e0e6c5520e",
+				"method": "GET"
+			},
+			{
+				"id": "a350ab20-dbf2-47c7-8aa6-7598c260c96b",
+				"method": "GET"
+			},
+			{
+				"id": "8f0de1df-f7e2-4f67-a035-e7f88cc1aa5d",
+				"method": "GET"
+			},
+			{
+				"id": "738787f8-7206-4fbf-9e71-077c4b09d71f",
+				"method": "GET"
+			},
+			{
+				"id": "ed5d32ad-0324-4375-a2a1-92dacd44ab7b",
+				"method": "GET"
+			},
+			{
+				"id": "fb9bdb3a-0b25-4d3e-9de3-c7c6026671f0",
+				"method": "PUT"
+			},
+			{
+				"id": "b2f203df-af46-4224-b24b-0b7da3622eec",
+				"method": "DELETE"
+			},
+			{
+				"id": "f8efccd2-60a1-4509-96ba-95e38b05e7a3",
+				"method": "DELETE"
+			}
+		]
+	}
+}
