@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Create New Item</title>
+
+	<!-- Style Sheets -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Scripts -->
+	<!-- <script src="js/itemService.js"></script> -->
+
+</head>
+
+<body>
+	<h1>Welcome to the ToDo List Application</h1>
+
+	<section>
+		<h3>Create a New Item.</h3>
+		<form method="post" action="/createNewItem" th:object="${newItemData}">
+			<label for="description">ToDo Description</label>
+			<input type="text" id="description" th:field="${newItemData.description}"> 
+			<label for="completed">Item	Completed?</label>
+			<input type="checkbox" id="completed" th:object="${newItemData.completed}">
+			<button type="submit">Submit</button>
+			<button type="reset">Reset</button>
+		</form>
+	</section>
+	
+</body>
+
+
+</html>

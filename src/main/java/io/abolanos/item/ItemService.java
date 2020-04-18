@@ -1,13 +1,14 @@
 package io.abolanos.item;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import io.abolanos.domain.Item;
 
 @Service																		// Annotation to set Service class.
 public class ItemService {
@@ -25,8 +26,8 @@ public class ItemService {
 		
 		Optional <Item> itemOptional = itemRepository.findById(id);
 		if (itemOptional.isPresent()) {
-			item.setId(id);
-			itemRepository.save(item);												// Saves over the identified item or creates a new item record in the database if description is not found.			
+			item.setId(id);														// Sets the id on the item to avoid creating a new one.
+			itemRepository.save(item);											// Saves over the identified item or creates a new item record in the database if description is not found.			
 		}
 	}
 	
@@ -40,7 +41,7 @@ public class ItemService {
 	
 	// Getters
 	
-	public Optional<Item> getItem(Long id) {							// Method to return an individual first occurrence of the item based on it's description match.
+	public Optional<Item> getItem(Long id) {									// Method to return an individual first occurrence of the item based on it's description match.
 		return itemRepository.findById(id);
 	}
 	
@@ -50,7 +51,7 @@ public class ItemService {
 		return items;
 	}
 	
-	public List<Item> getAllItemsSorted() {										// Method to return a sorted List<Item> items.
+	public List<Item> getAllItemsSorted() {										// Method to return a sorted List<Item> items.	
 		List <Item> sortedItems = getAllItems();								// Temporary List<Item> populated by the getAllItems() method.
 		Collections.sort(sortedItems, (a, b) -> a.getDescription().compareTo(b.getDescription())); // Use the Collections' sort method with a lambda function to compare descriptions given two description of the items.		
 		return sortedItems;

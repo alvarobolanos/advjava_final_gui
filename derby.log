@@ -1,10 +1,26 @@
 ----------------------------------------------------------------
-Wed Apr 01 20:09:10 EDT 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0171-3838-5ef2-0000060555c0 
-on database directory memory:C:\Users\chang\Documents\workspace-spring-tool-suite\advjava_final_gui\testdb with class loader sun.misc.Launcher$AppClassLoader@764c12b6 
+Sat Apr 18 18:27:59 EDT 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0171-8f67-d8ae-000007cbdd70 
+on database directory memory:C:\Users\chang\Documents\workspace-spring-tool-suite\advjava_final_gui\testdb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2626b418 
 Loaded from file:/C:/Users/chang/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_241-b07
+java.runtime.version=13.0.2+8
+user.dir=C:\Users\chang\Documents\workspace-spring-tool-suite\advjava_final_gui
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Apr 18 18:28:58 EDT 2020:
+Shutting down instance a816c00e-0171-8f67-d8ae-000007cbdd70 on database directory memory:C:\Users\chang\Documents\workspace-spring-tool-suite\advjava_final_gui\testdb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2626b418 
+----------------------------------------------------------------
+Sat Apr 18 18:28:59 EDT 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance 3988c0be-0171-8f67-d8ae-000007cbdd70 
+on database directory memory:C:\Users\chang\Documents\workspace-spring-tool-suite\advjava_final_gui\testdb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2626b418 
+Loaded from file:/C:/Users/chang/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=13.0.2+8
 user.dir=C:\Users\chang\Documents\workspace-spring-tool-suite\advjava_final_gui
 os.name=Windows 10
 os.arch=amd64
