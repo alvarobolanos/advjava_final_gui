@@ -1,21 +1,32 @@
 package io.abolanos.domain;
 
-import javax.persistence.Column;
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 
 @Entity
 public class Item {
 
 	@Id	
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column(name = "id", updatable = false, nullable = false)
+	@GeneratedValue (strategy = GenerationType.AUTO)
 	private Long id;									// Stores an auto-generated long value as an id in the database.
+	
 	private String description;							// Stores the description of the todo item.
+	
 	private Boolean completed;							// Flag for the status of the todo item.
+	
+	@CreationTimestamp
+	private LocalDateTime createDateTime;
+	
+	@UpdateTimestamp
+	private LocalDateTime updateDateTime;
 	
 	public Item() {										// Empty constructor for item initialization.
 		
@@ -47,6 +58,7 @@ public class Item {
 	public Boolean getCompleted() {
 		return completed;
 	}
+	
 
 	// Setters
 	

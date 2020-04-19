@@ -1,24 +1,35 @@
 package io.abolanos.item;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import io.abolanos.domain.Item;
 
 @Controller
 public class ItemController {
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@Autowired
+	ItemRepository itemRepo;
+	
+	@GetMapping("/")
 	public String index() {
 		return "index";	
 	}
 	
-	@RequestMapping(value = "/createNewItem", method = RequestMethod.GET)
-	public String processNewItem(Model model) {
-		model.addAttribute("newItemData", new Item());
-		return "createNewItem";	
+	@GetMapping("/create")
+	public String create(Model model) {
+		model.addAttribute("item", new Item());
+		return "create";	
+	}
+	
+	@PostMapping("/save")
+	public String save(Item item, Model model) {
+		itemRepo.save(item);
+		
+		return "save";
 	}
 	
 

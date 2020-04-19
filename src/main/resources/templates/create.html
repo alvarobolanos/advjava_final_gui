@@ -17,17 +17,17 @@
 </head>
 
 <body>
-	<h1>Welcome to the ToDo List Application</h1>
+	<h1>Create New Item</h1>
 
 	<section>
 		<h3>Create a New Item.</h3>
-		<form method="post" action="/createNewItem" th:object="${newItemData}">
+		<form action="/save" method="POST" th:object="${item}">
 			<label for="description">ToDo Description</label>
-			<input type="text" id="description" th:field="${newItemData.description}"> 
+			<input type="text" id="description" th:field="${item.description}"> 
 			<label for="completed">Item	Completed?</label>
-			<input type="checkbox" id="completed" th:object="${newItemData.completed}">
-			<button type="submit">Submit</button>
-			<button type="reset">Reset</button>
+			<input type="checkbox" id="completed" th:object="${item.completed}" th:value="true">
+			<button type="submit" value="Submit">Submit</button>
+			<button type="reset" vale="Reset">Reset</button>
 		</form>
 	</section>
 	

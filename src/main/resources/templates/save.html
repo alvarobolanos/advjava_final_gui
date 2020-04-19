@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>New Item Confirmation Page</title>
+
+	<!-- Style Sheets -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Scripts -->
+	<!-- <script src="js/itemService.js"></script> -->
+
+</head>
+
+<body>
+	<h1>New Item Confirmation Page</h1>
+
+	<section>
+
+		<h3>A new item has been added.</h3>
+		<div id="todoList">
+		<table>
+			<tr>
+				<th>Description</th>
+				<th>Completed?</th>
+			</tr>
+			<tr>
+				<td><p><span th:text="${item.description}"></span></p></td>
+				<td><p><span th:text="${item.completed}"></span></p></td>
+			</tr>
+		</table>
+		</div>
+		<hr/>
+		<a href="/create" class="button" id="todo">Create Another Item</a>
+		<a href="/" class="button" id="todo">Go Back Home</a>
+	</section>
+</body>
+
+
+</html>
