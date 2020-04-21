@@ -8,3 +8,4 @@
 - https://www.postman.com/
 - https://www.baeldung.com/spring-boot-h2-database
 - https://www.kindsonthegenius.com/2019/11/28/devops-ci-cd-pipeline-step-by-step-tutorial-springboot-github-heroku/
+- https://stackoverflow.com/questions/38040572/spring-boot-loading-initial-data
