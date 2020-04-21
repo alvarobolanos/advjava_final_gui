@@ -6,3 +6,5 @@
 - https://www.baeldung.com/hibernate-identifiers
 - https://www.springboottutorial.com/spring-boot-crud-rest-service-with-jpa-hibernate
 - https://www.postman.com/
+- https://www.baeldung.com/spring-boot-h2-database
+- https://www.kindsonthegenius.com/2019/11/28/devops-ci-cd-pipeline-step-by-step-tutorial-springboot-github-heroku/
