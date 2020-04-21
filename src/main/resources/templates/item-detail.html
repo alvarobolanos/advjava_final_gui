@@ -19,14 +19,18 @@
 					<tr>
 						<th scope="col">ID</th>
 						<th scope="col">Description</th>
-						<th scope="col">Completed?</th>
+						<th scope="col">Actions</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-					<th scope="row" th:text="${item.id}"> </th>
-						<td th:text="${item.description}"/>
-						<td th:text="${item.completed}"/>
+					<th scope="row" th:text="${itemDetail.id}"> </th>
+						<td th:text="${itemDetail.description}"/>
+						<td>
+							<form class="form-inline" method="get" th:action="@{/delete/item/} + ${itemDetail.id}">
+							<button value="Delete" type="submit" class="btn btn-danger">Delete</button>
+							</form>
+						</td>
 					</tr>
 				</tbody>
 			</table>		

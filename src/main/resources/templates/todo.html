@@ -7,11 +7,11 @@
 
 	<nav th:replace="layouts::nav" ></nav>
 
-	<h1>Todo Items</h1>
+	<h1>ToDo Items</h1>
 
 	<section>
 
-		<h3>Todo Items.</h3>
+		<h3>ToDo Items.</h3>
 		
 		<div id="todoList">	
 			<table class="table table-striped">
@@ -20,6 +20,7 @@
 						<th scope="col">ID</th>
 						<th scope="col">Description</th>
 						<th scope="col">Completed?</th>
+						<th scope="col">Actions</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -27,6 +28,11 @@
 						<th scope="row" th:text="${items.id}"> </th>
 						<td th:text="${items.description}"/>
 						<td th:text="${items.completed}"/>
+						<td>
+							<form class="form-inline" method="get" th:action="@{/delete/item/} + ${items.id}">
+							<button value="Delete" type="submit" class="btn btn-danger">Delete</button>
+							</form>
+						</td>
 					</tr>			
 				</tbody>
 			</table>

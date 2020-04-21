@@ -23,8 +23,10 @@ public class ItemController {
 	
 	@GetMapping("/")
 	public String index(Model model) {
-		List<Item> items = itemService.getAllItems();
-		model.addAttribute("itemsList", items);
+		List<Item> completedItems = itemService.getComplete();
+		List<Item> todoItems = itemService.getNonComplete();
+		model.addAttribute("completedItemsList", completedItems);
+		model.addAttribute("todoItemsList", todoItems);
 		return "index";	
 	}
 	
@@ -68,12 +70,29 @@ public class ItemController {
 		return "shuffled";
 	}
 	
-	@GetMapping("/item/{id}")
+	@GetMapping("/view/item/{id}")
 	public String itemDetail(Model model, @PathVariable Long id) {
-		Optional<Item> item = itemRepo.findById(id);
-		model.addAttribute("item", item);
+		Optional<Item> itemDetail = itemRepo.findById(id);
+		model.addAttribute("itemDetail", itemDetail);
 		return "item-detail";
 	}
 	
+	@GetMapping("/mark/complete/item/{id}")
+	public String markComplete(@PathVariable Long id, Item item) {
+		itemService.updateItem(id, item);
+		return "redirect:/view/item/{id}";
+	}
+	
+	@GetMapping("/mark/todo/item/{id}")
+	public String markTodo(@PathVariable Long id, Item item) {
+		itemService.updateItem(id, item);
+		return "redirect:/view/item/{id}";
+	}
+	
+	@GetMapping("/delete/item/{id}")
+	public String deleteItem(@PathVariable Long id) {
+		itemService.deleteItem(id);
+		return "redirect:/";
+	}
 
 }

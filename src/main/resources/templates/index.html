@@ -10,8 +10,7 @@
 	<h1>Welcome to the ToDo List Application</h1>
 
 	<section>
-
-		<h3>Current Items.</h3>
+		<h3><a th:href="@{/todo}">ToDo Items.</a></h3>
 		
 		<div id="todoList">	
 			<table class="table table-striped">
@@ -19,20 +18,74 @@
 					<tr>
 						<th scope="col">ID</th>
 						<th scope="col">Description</th>
-						<th scope="col">Completed?</th>
+						<th scope="col">Actions</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="items: ${itemsList}">
-						<th scope="row" th:text="${items.id}"> </th>
+					<tr th:each="items: ${todoItemsList}">
+						<th scope="row" th:text="${items.id}"></th>
 						<td th:text="${items.description}"/>
-						<td th:text="${items.completed}"/>
+						<td width="30%">
+							<div class="container">
+								<div class="row">
+									<div class="col">
+										<form class="form-inline" method="get" th:action="@{/edit/item/} + ${items.id}">
+										<button value="Edit" type="submit" class="btn btn-primary btn-sm">Edit</button>
+										</form>
+									</div>
+									<div class="col">
+										<form class="form-inline" method="get" th:action="@{/delete/item/} + ${items.id}">
+										<button value="Delete" type="submit" class="btn btn-danger btn-sm">Delete</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</td>
 					</tr>			
 				</tbody>
 			</table>
 		</div>
-		
 	</section>
+	<hr>
+	<section>
+
+		<h3><a th:href="@{/completed}">Completed Items.</a></h3>
+		
+		<div id="todoList">	
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Description</th>
+						<th scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="items: ${completedItemsList}">
+						<th scope="row" th:text="${items.id}"></th>
+						<td th:text="${items.description}"/>
+						<td width="30%">
+							<div class="container">
+								<div class="row">
+									<div class="col">
+										<form class="form-inline" method="get" th:action="@{/edit/item/} + ${items.id}">
+										<button value="Edit" type="submit" class="btn btn-primary btn-sm">Edit</button>
+										</form>
+									</div>
+									<div class="col">
+										<form class="form-inline" method="get" th:action="@{/delete/item/} + ${items.id}">
+										<button value="Delete" type="submit" class="btn btn-danger btn-sm">Delete</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>			
+				</tbody>
+			</table>
+		</div>
+	</section>
+	<hr>
 </body>
 
 
