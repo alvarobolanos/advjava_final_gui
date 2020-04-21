@@ -59,9 +59,15 @@ public class Item {
 		return completed;
 	}
 	
+	public LocalDateTime getCreateDateTime() {
+		return createDateTime;
+	}
+
+	public LocalDateTime getUpdateDateTime() {
+		return updateDateTime;
+	}
 
 	// Setters
-	
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -73,5 +79,15 @@ public class Item {
 	public void setCompleted(Boolean completed) {
 		this.completed = completed;
 	}
+
+	public void setCreateDateTime(LocalDateTime createDateTime) {
+		this.createDateTime = createDateTime;
+	}
+
+	public void setUpdateDateTime(LocalDateTime updateDateTime) {
+		this.updateDateTime = updateDateTime;
+	}
+	
+	
 	
 }

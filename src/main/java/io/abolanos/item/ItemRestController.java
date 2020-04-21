@@ -16,32 +16,32 @@ public class ItemRestController {
 	@Autowired																	// Connects itemService with the main controller.
 	private ItemService itemService;
 	
-	@RequestMapping(value={"/todolist", "/todolist/all"}, method = RequestMethod.GET)				// URL request mapping to control.
+	@RequestMapping(value={"", "/todolist", "/todolist/all"}, method = RequestMethod.GET)				// URL request mapping to control.
 	public List<Item> getAllItems() {															// Method that calls the corresponding service in itemService.
 		return itemService.getAllItems();
 	}
 
-	@RequestMapping({"/todolist/sorted", "/todolist/all/sorted"})					// URL request mapping to control.
+	@RequestMapping({"/sorted", "/todolist/sorted", "/todolist/all/sorted"})					// URL request mapping to control.
 	public List<Item> getAllItemsSorted() {										// Method that calls the corresponding service in itemService.
 		return itemService.getAllItemsSorted();
 	}
 	
-	@RequestMapping({"/todolist/shuffled", "/todolist/all/shuffled"})				// URL request mapping to control.
+	@RequestMapping({"shuffled", "/todolist/shuffled", "/todolist/all/shuffled"})				// URL request mapping to control.
 	public List<Item> getAllItemsShuffled() {									// Method that calls the corresponding service in itemService.
 		return itemService.getAllItemsShuffled();								
 	}
 	
-	@RequestMapping("/todolist/todo")											// URL request mapping to control.
+	@RequestMapping({"/todo","/todolist/todo"})											// URL request mapping to control.
 	public List<Item> getNonComplete() {										// Method that calls the corresponding service in itemService.
 		return itemService.getNonComplete();
 	}
 	
-	@RequestMapping("/todolist/complete")										// URL request mapping to control.
+	@RequestMapping({"/completed", "/todolist/completed"})										// URL request mapping to control.
 	public List<Item> getComplete() {											// Method that calls the corresponding service in itemService.
 		return itemService.getComplete();
 	}
 	
-	@RequestMapping("/todolist/{id}")									// URL request mapping to control.
+	@RequestMapping({"/{id}", "/todolist/{id}"})									// URL request mapping to control.
 	public Optional<Item> getItem(@PathVariable Long id) {			// Method that calls the corresponding service in itemService.
 		return itemService.getItem(id);
 	}

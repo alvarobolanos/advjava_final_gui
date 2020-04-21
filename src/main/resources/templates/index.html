@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-	<title>ToDo List</title>
-
-	<!-- Style Sheets -->
-	<link rel="stylesheet" href="css/style.css">
-
-	<!-- Scripts -->
-	<!-- <script src="js/itemService.js"></script> -->
-
-</head>
+<head th:replace="layouts::head"></head>
 
 <body>
+
+	<nav th:replace="layouts::nav" ></nav>
+
 	<h1>Welcome to the ToDo List Application</h1>
 
 	<section>
 
-		<div id="todoList">
 		<h3>Current Items.</h3>
 		
-		<!-- Javascript to populate this by parsing Json returned by Spring MVC -->
+		<div id="todoList">	
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Description</th>
+						<th scope="col">Completed?</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="items: ${itemsList}">
+						<th scope="row" th:text="${items.id}"> </th>
+						<td th:text="${items.description}"/>
+						<td th:text="${items.completed}"/>
+					</tr>			
+				</tbody>
+			</table>
 		</div>
-			
-			<a href="" class="button" id="todo">To Do Items</a>
-			<a href="" class="button" id="complete">Complete Items</a>
-			<a href="" class="button" id="sort">Sort All Alphabetically</a>
-			<a href="" class="button" id="shuffle">Shuffle All</a>
-			<hr/>
-			<a href="/create" class="button" id="todo">Create New Item</a>
+		
 	</section>
 </body>
 
