@@ -11,22 +11,22 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 
-@Entity
+@Entity													// Annotation for Hibernate to identify as an entity.
 public class Item {
 
-	@Id	
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	@Id													// ID annotation for Hibernate to manage.
+	@GeneratedValue (strategy = GenerationType.AUTO)	// Strategy delegates to db to create and maintain the id. It's a fast strategy however IDENTITY may prove better if seeding with non sequential ids. Identity may slow app down when batch creating a large amount of records.
 	private Long id;									// Stores an auto-generated long value as an id in the database.
 	
 	private String description;							// Stores the description of the todo item.
 	
 	private Boolean completed;							// Flag for the status of the todo item.
 	
-	@CreationTimestamp
-	private LocalDateTime createDateTime;
+	@CreationTimestamp									// Autogenerates creation date stamp.
+	private LocalDateTime createDateTime;				
 	
-	@UpdateTimestamp
-	private LocalDateTime updateDateTime;
+	@UpdateTimestamp									// Autogenerates and maintains update date stamp.
+	private LocalDateTime updateDateTime;				
 	
 	public Item() {										// Empty constructor for item initialization.
 		
@@ -39,11 +39,13 @@ public class Item {
 	}
 	
 
+	// TODO: could modify this constructor to include dates parameters to seed database with a data.sql file rather than autorunner.
 	public Item(String description, Boolean status) {	// Constructor for Item.
 		super();
 		this.description = description;
 		this.setCompleted(status);
 	}
+	
 	
 	// Getters
 	
@@ -87,7 +89,5 @@ public class Item {
 	public void setUpdateDateTime(LocalDateTime updateDateTime) {
 		this.updateDateTime = updateDateTime;
 	}
-	
-	
-	
+		
 }

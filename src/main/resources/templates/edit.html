@@ -13,16 +13,16 @@
 		<div id="todoList">
 			<h3>Create a New Item.</h3>
 			
-			<form action="/save" method="POST" th:object="${item}">
+			<form action="/update" method="POST" th:object="${item}">
 				<div class="form-group">
 					<label for="description">ToDo Description</label>
-					<input type="text" class="form-control" id="description" th:field="${item.description}"> 
+					<input type="text" class="form-control" id="description" th:field="${item.description}" th:placeholder="#{item.description}"> 
 					<small class="form-text text-muted">Enter your ToDo item description.</small>
 				</div>
-				<!-- <div class="form-group form-check">
-					<input type="checkbox" id="completed" th:field="${item.completed}" th:value="TRUE">
+				<div class="form-group form-check">
+					<input type="checkbox" id="completed" th:field="${item.completed}" th:value="#{item.completed}">
 					<label for="completed" class="form-check-label">Item Completed?</label>
-				</div>  -->
+				</div>
 				<button type="submit" class="btn btn-primary" value="Submit">Submit</button>
 				<button type="reset" class="btn btn-primary" vale="Reset">Reset</button>
 			</form>

@@ -13,19 +13,19 @@ import io.abolanos.item.ItemRepository;
 public class AdvjavaFinalGuiApplication {
 	
 	@Autowired
-	ItemRepository itemRepo;
+	ItemRepository itemRepo;					// Create an autowired connection to seed the database.
 	
 	public static void main(String[] args) {
 		SpringApplication.run(AdvjavaFinalGuiApplication.class, args);
 	}
 	
+	// Seeding the database.
 	@Bean
 	CommandLineRunner runner() {
 	
 		return args -> {
 			
 			// Create items manually.
-			
 			Item item1 = new Item("Finish the project", true);
 			Item item2 = new Item("Do the dishes", false);
 			Item item3 = new Item("Cut my hair", false);

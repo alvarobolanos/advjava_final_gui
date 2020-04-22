@@ -31,6 +31,45 @@ public class ItemService {
 		}
 	}
 	
+	// TODO: Find a better way to retain values when updating.
+	public void markComplete(Long id, Item item) {
+		
+		Optional <Item> queryItem = itemRepository.findById(id);
+		if (queryItem.isPresent()) {											// If queried item is found then,
+			Item foundItem = queryItem.get();									// Convert the optional queryItem into a found item.
+			item.setCompleted(true);											// Sets the completed flag to true.
+			item.setDescription(foundItem.getDescription());					// Retains the description.
+			item.setCreateDateTime(foundItem.getCreateDateTime());				// Retains the create timestamp.
+			itemRepository.save(item);											// Saves over the identified item or creates a new item record in the database if description is not found.			
+		}
+	}
+	
+	// TODO: Find a better way to retain values when updating.
+	public void markToDo(Long id, Item item) {
+		
+		Optional <Item> queryItem = itemRepository.findById(id);
+		if (queryItem.isPresent()) {											// If queried item is found then,
+			Item foundItem = queryItem.get();									// Convert the optional queryItem into a found item.
+			item.setCompleted(false);											// Sets the completed flag to false.
+			item.setDescription(foundItem.getDescription());					// Retains the description.
+			item.setCreateDateTime(foundItem.getCreateDateTime());				// Retains the create timestamp.
+			itemRepository.save(item);											// Saves over the identified item or creates a new item record in the database if description is not found.			
+		}
+	}
+	
+	// TODO: Find a better way to retain values when updating.
+		public void editItem(Long id, Item item) {
+			
+			Optional <Item> queryItem = itemRepository.findById(id);
+			if (queryItem.isPresent()) {											// If queried item is found then,
+				Item foundItem = queryItem.get();									// Convert the optional queryItem into a found item.
+				item.setCompleted(false);											// Sets the completed flag to false.
+				item.setDescription(foundItem.getDescription());					// Retains the description.
+				item.setCreateDateTime(foundItem.getCreateDateTime());				// Retains the create timestamp.
+				itemRepository.save(item);											// Saves over the identified item or creates a new item record in the database if description is not found.			
+			}
+		}
+	
 	public void deleteItem(Long id) {
 		itemRepository.deleteById(id);
 	}

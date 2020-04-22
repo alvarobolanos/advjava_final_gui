@@ -19,7 +19,6 @@
 					<tr>
 						<th scope="col">ID</th>
 						<th scope="col">Description</th>
-						<th scope="col">Completed?</th>
 						<th scope="col">Actions</th>
 					</tr>
 				</thead>
@@ -27,12 +26,11 @@
 					<tr th:each="items: ${itemsList}">
 						<th scope="row" th:text="${items.id}"> </th>
 						<td th:text="${items.description}"/>
-						<td th:text="${items.completed}"/>
 						<td>
 							<div class="row">
 								<div class="col">
-									<form class="form-inline" method="get" th:action="@{/mark/complete/item/} + ${items.id}">
-										<button value="" type="submit" class="btn btn-primary btn-sm">Complete</button>
+									<form class="form-inline" method="get" th:action="@{/mark/todo/item/} + ${items.id}">
+										<button value="" type="submit" class="btn btn-primary btn-sm">ToDo</button>
 									</form>
 								</div>
 								<div class="col">
