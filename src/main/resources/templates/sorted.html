@@ -19,25 +19,36 @@
 					<tr>
 						<th scope="col">ID</th>
 						<th scope="col">Description</th>
-						<th scope="col">Completed?</th>
 						<th scope="col">Actions</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="items: ${itemsList}">
-						<th scope="row" th:text="${items.id}"> </th>
-						<td th:text="${items.description}"/>
-						<td th:text="${items.completed}"/>
-						<td>
-							<form class="form-inline" method="get" th:action="@{/delete/item/} + ${items.id}">
-							<button value="Delete" type="submit" class="btn btn-danger">Delete</button>
-							</form>
+					<tr th:each="item: ${itemsList}">
+						<th scope="row"><a th:href="@{/view/item/} + ${item.id}" th:text="${item.id}"></a></th>
+						<td><a th:href="@{/view/item/} + ${item.id}" th:text="${item.description}"></a></td>
+						<td width="40%">
+							<div class="container">
+								<div class="row">
+									<div class="col">
+										<form class="form-inline" method="get" th:action="@{/edit/item/} + ${item.id}">
+										<button value="Edit" type="submit" class="btn btn-warning btn-sm">Edit</button>
+										</form>
+									</div>
+									<div class="col">
+										<form class="form-inline" method="get" th:action="@{/delete/item/} + ${item.id}">
+										<button value="Delete" type="submit" class="btn btn-danger">Delete</button>
+										</form>								
+									</div>
+								</div>
+							</div>
 						</td>
 					</tr>			
 				</tbody>
 			</table>
 		</div>
-		
+		<hr/>
+		<a href="/" class="btn btn-primary" id="todo">Go Back Home</a>
+		<a href="/create" class="btn btn-primary" id="todo">Create Another Item</a>
 	</section>
 </body>
 

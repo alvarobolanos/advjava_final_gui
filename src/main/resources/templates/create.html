@@ -16,17 +16,14 @@
 			<form action="/save" method="POST" th:object="${item}">
 				<div class="form-group">
 					<label for="description">ToDo Description</label>
-					<input type="text" class="form-control" id="description" th:field="${item.description}"> 
+					<input type="text" class="form-control form-control-lg" id="description" th:field="${item.description}"> 
 					<small class="form-text text-muted">Enter your ToDo item description.</small>
 				</div>
-				<!-- <div class="form-group form-check">
-					<input type="checkbox" id="completed" th:field="${item.completed}" th:value="TRUE">
-					<label for="completed" class="form-check-label">Item Completed?</label>
-				</div>  -->
 				<button type="submit" class="btn btn-primary" value="Submit">Submit</button>
 				<button type="reset" class="btn btn-primary" vale="Reset">Reset</button>
 			</form>
-			
+			<hr/>
+		<a href="/" class="btn btn-primary" id="todo">Go Back Home</a>
 		</div>
 	</section>
 	
