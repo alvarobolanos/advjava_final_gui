@@ -20,7 +20,7 @@
 > Note that all Mappings have been created in the ItemController class.
 
 ### api (/api)
--
+- Check out the api endpoints by checking the code in the following link: https://github.com/alvarobolanos/advjava_final_gui/blob/master/src/main/java/io/abolanos/item/ItemRestController.java
 
 ## Observations
 I included some business logic in the controller that I should have taken care off in the service. I guess that while it's doable it's not a good practice. Specifically the itemDetail() and editItem() methods.
